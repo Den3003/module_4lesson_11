@@ -1,12 +1,12 @@
 'use strict';
 
-const getArrayRandomCount = (arr) => {
-  const arrayRandom = [...arr, Math.floor(Math.random() * 10) + 1];
+const getArrayRandomCount = ([...arr]) => {
+  arr.push(Math.floor(Math.random() * 10) + 1);
 
-  if (arrayRandom.reduce((acc, item) => acc += item) >= 50) {
-    return arrayRandom;
+  if (arr.reduce((acc, item) => acc += item) < 50) {
+    return getArrayRandomCount(arr);
   } else {
-    return getArrayRandomCount(arrayRandom);
+    return arr;
   }
 };
 
