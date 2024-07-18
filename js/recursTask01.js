@@ -63,17 +63,18 @@ const guessNumber = () => {
             ${min} до ${max}`);
           break;
 
-        case userPredictNumber > hiddenNumber:
+        case +userPredictNumber !== hiddenNumber:
           arrayPredictNumber.push(+userPredictNumber);
           if (arrayPredictNumber.length !== userAttempts) {
-            alert(`Загаданное число меньше ${userPredictNumber} !`);
+            alert(`Загаданное число ${userPredictNumber > hiddenNumber ?
+              'меньше' : 'больше'} ${userPredictNumber} !`);
           } else {
             alert('Попытки закончились');
             return;
           }
           break;
 
-        case userPredictNumber < hiddenNumber:
+          /*  case userPredictNumber < hiddenNumber:
           arrayPredictNumber.push(+userPredictNumber);
           if (arrayPredictNumber.length !== userAttempts) {
             alert(`Загаданное число больше ${userPredictNumber} !`);
@@ -81,7 +82,7 @@ const guessNumber = () => {
             alert('Попытки закончились');
             return;
           }
-          break;
+          break; */
 
         default:
           alert(`Вы угадали это число ${hiddenNumber}`);
