@@ -74,16 +74,6 @@ const guessNumber = () => {
           }
           break;
 
-          /*  case userPredictNumber < hiddenNumber:
-          arrayPredictNumber.push(+userPredictNumber);
-          if (arrayPredictNumber.length !== userAttempts) {
-            alert(`Загаданное число больше ${userPredictNumber} !`);
-          } else {
-            alert('Попытки закончились');
-            return;
-          }
-          break; */
-
         default:
           alert(`Вы угадали это число ${hiddenNumber}`);
           return;
